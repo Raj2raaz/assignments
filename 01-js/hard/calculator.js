@@ -16,6 +16,44 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+  constructor() {
+    this.result = 0;
+  }
+
+  add(number) {
+    if (isNan(number)) {
+      throw new Error("Invalid Input : Not a number!");
+    }
+    this.result += number;
+  }
+  subtract(number) {
+    if (isNan(number)) {
+      throw new Error("Invalid Input : Not a number!");
+    }
+    this.result -= number;
+  }
+  multiply(number) {
+    if (isNan(number)) {
+      throw new Error("Invalid Input : Not a number!");
+    }
+    this.result *= number;
+  }
+  divide(number) {
+    if (isNan(number)) {
+      throw new Error("Invalid Input : Not a number!");
+    }
+    if (number === 0){
+      throw new Error('Cannot Divide By Zero!')
+    }
+    this.result /= number;
+  }
+  clear(){
+    this.result = 0;
+  }
+  getResult(){
+    return this.result;
+  }
+}
 
 module.exports = Calculator;
